@@ -2,7 +2,7 @@
 
 pub mod control_and_status;
 
-pub mod bitstring;
+pub mod bitseq;
 
 mod float;
 pub use float::*;
