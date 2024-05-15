@@ -6,14 +6,8 @@ edition = "2021"
 rust-version = "1.78"
 readme = "README.md"
 license = "Apache-2.0 WITH LLVM-exception"
-keywords = ["float", "no-std"]
-categories = ["mathematics", "no-std", "no-std::no-alloc"]
-
-[features]
-default = ["std"]
-std = ["bitflags/std"]
-
-[lib]
+keywords = ["float"]
+categories = ["mathematics"]
 
 [dependencies]
-bitflags = { version = "2.5.0", default-features = false }
+bitflags = { version = "2.5.0", default-features = false, features = ["std"] }
