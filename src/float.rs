@@ -1,5 +1,5 @@
 use super::control_and_status::*;
-use bytemuck::Pod;
+use bytemuck::{Pod, Zeroable};
 use core::cmp::Ordering;
 use core::fmt;
 use core::mem;
@@ -12,9 +12,10 @@ use num_traits::{
     ToBytes, Unsigned, Zero,
 };
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Zeroable, Pod)]
+#[repr(transparent)]
 pub struct AngFloat<
-    Repr: ?Sized,
+    Repr: Pod,
     const ANGLE_BITS: usize,
     const EXPONENT_BITS: usize,
     const EXPONENT_BIAS: u128,
