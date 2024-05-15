@@ -7,12 +7,18 @@ use core::ops::{
 };
 use core::str::FromStr;
 
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
-pub struct FloatSpec {
-    pub angle_bits: u8,
-    pub exponent_bits: NonZeroU8,
-    pub exponent_bias: u128,
-    pub mantissa_bits: NonZeroU8,
+#[derive(Copy, Clone)]
+pub struct Float<
+    const ANGLE_BITS: u8,
+    const EXPONENT_BITS: u8,
+    const EXPONENT_BIAS: u128,
+    const MANTISSA_BITS: u8,
+> where
+    [(); ((ANGLE_BITS as usize) + (EXPONENT_BITS as usize) + (MANTISSA_BITS as usize)).div_ceil(8)]:
+        Copy,
+{
+    pub bytes: [u8; ((ANGLE_BITS as usize) + (EXPONENT_BITS as usize) + (MANTISSA_BITS as usize))
+        .div_ceil(8)],
 }
 
 #[cfg(test)]
