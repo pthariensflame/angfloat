@@ -31,14 +31,6 @@ impl<T> StatusAnd<T> {
 }
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
-pub enum Category {
-    Normal,
-    Zero,
-    Infinity,
-    NaN,
-}
-
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum Round {
     Nearest {
         ties_to: RoundTiesDirection,
