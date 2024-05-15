@@ -15,5 +15,5 @@ std = ["bitflags/std"]
 
 [lib]
 
-[build-dependencies]
+[dependencies]
 bitflags = { version = "2.5.0", default-features = false }
