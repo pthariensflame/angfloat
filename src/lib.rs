@@ -1,44 +1,6 @@
 #![no_std]
 
-use bitflags::bitflags;
-use core::cmp::Ordering;
-use core::fmt;
-use core::ops::{
-    Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Rem, RemAssign, Sub, SubAssign,
-};
-use core::str::FromStr;
+pub mod control_and_status;
 
-bitflags! {
-    #[must_use]
-    #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
-    #[repr(transparent)]
-    pub struct Status: u8 {
-        const OK = 0x00;
-        const INVALID_OP = 0x01;
-        const DIV_BY_ZERO = 0x02;
-        const OVERFLOW = 0x04;
-        const UNDERFLOW = 0x08;
-        const INEXACT = 0x10;
-    }
-}
-
-#[must_use]
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
-pub struct StatusAnd<T> {
-    pub status: Status,
-    pub value: T,
-}
-
-impl<T> StatusAnd<T> {
-    pub fn map_value<F: FnOnce(T) -> U, U>(self, f: F) -> StatusAnd<U> {
-        StatusAnd {
-            status: self.status,
-            value: f(self.value),
-        }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-}
+mod float;
+pub use float::*;
