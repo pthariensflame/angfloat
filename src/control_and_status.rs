@@ -16,7 +16,7 @@ bitflags! {
 
 #[must_use]
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
-pub struct StatusAnd<T> {
+pub struct StatusAnd<T: ?Sized> {
     pub status: Status,
     pub value: T,
 }
@@ -30,17 +30,16 @@ impl<T> StatusAnd<T> {
     }
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum Category {
-    Infinity,
-    NaN,
     Normal,
     Zero,
+    Infinity,
+    NaN,
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum Round {
-    Odd,
     Nearest {
         ties_to: RoundTiesDirection,
     },
@@ -48,9 +47,10 @@ pub enum Round {
         polarity: RoundDirectionPolarity,
         direction: RoundDirection,
     },
+    Odd,
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum RoundTiesDirection {
     Even,
     Directed {
@@ -59,16 +59,16 @@ pub enum RoundTiesDirection {
     },
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum RoundDirectionPolarity {
     Towards,
     Away,
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, Debug, Hash)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 pub enum RoundDirection {
-    Infinity,
     Zero,
+    Infinity,
 }
 
 #[cfg(test)]
