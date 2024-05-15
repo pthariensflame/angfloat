@@ -21,7 +21,7 @@ default-features = false
 [dependencies.bytemuck]
 version = "1.16.0"
 default-features = false
-features = ["derive", "zeroable_maybe_uninit", "zeroable_atomics", "align_offset", "min_const_generics", "must_cast", "const_zeroed"]
+features = ["zeroable_maybe_uninit", "zeroable_atomics", "align_offset", "min_const_generics", "must_cast", "const_zeroed"]
 
 [dependencies.num-traits]
 version = "0.2.19"

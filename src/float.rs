@@ -12,7 +12,7 @@ use num_traits::{
     ToBytes, Unsigned, Zero,
 };
 
-#[derive(Copy, Clone, Zeroable, Pod)]
+#[derive(Copy, Clone)]
 #[repr(transparent)]
 pub struct AngFloat<
     Repr: Pod,
