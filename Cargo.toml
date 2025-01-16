@@ -1,5 +1,6 @@
 [package]
 name = "angfloat"
+authors = ["Laine Taffin Altman"]
 version = "0.0.0"
 resolver = "3"
 edition = "2024"
