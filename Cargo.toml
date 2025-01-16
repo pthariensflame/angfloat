@@ -11,3 +11,7 @@ keywords = ["float", "no-std"]
 categories = ["mathematics", "no-std", "no-std::no-alloc"]
 
 [features]
+
+[dependencies.num-traits]
+version = "0.2.19"
+default-features = false
