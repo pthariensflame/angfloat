@@ -1,28 +1,12 @@
 [package]
 name = "angfloat"
 version = "0.0.0"
-resolver = "2"
-edition = "2021"
-rust-version = "1.80"
+resolver = "3"
+edition = "2024"
+rust-version = "1.86"
 readme = "README.md"
-license = "Apache-2.0 WITH LLVM-exception"
+license = "Apache-2.0 OR MIT"
 keywords = ["float", "no-std"]
 categories = ["mathematics", "no-std", "no-std::no-alloc"]
 
 [features]
-default = ["std"]
-std = ["alloc", "bitflags/std", "bytemuck/extern_crate_std", "num-traits/std"]
-alloc = ["bytemuck/extern_crate_alloc"]
-
-[dependencies.bitflags]
-version = "2.5.0"
-default-features = false
-
-[dependencies.bytemuck]
-version = "1.16.0"
-default-features = false
-features = ["zeroable_maybe_uninit", "zeroable_atomics", "align_offset", "min_const_generics", "must_cast", "const_zeroed"]
-
-[dependencies.num-traits]
-version = "0.2.19"
-default-features = false
