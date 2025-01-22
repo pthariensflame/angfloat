@@ -1,0 +1,17 @@
+ieee754:
+    type: report
+    title: IEEE Standard for Floating-Point Arithmetic
+    author: IEEE-SA Standards Board
+    date: 2020-05-08
+    abstract: This standard specifies interchange and arithmetic formats and methods for binary and decimal floating-point arithmetic in computer programming environments. This standard specifies exception conditions and their default handling. An implementation of a floating-point system conforming to this standard may be realized entirely in software, entirely in hardware, or in any combination of software and hardware. For operations specified in the normative part of this standard, numerical results and exceptions are uniquely determined by the values of the input data, sequence of operations, and destination formats, all under user control.
+    genre: Standard
+    organization: IEEE Computer Society
+    publisher: ISO/IEC/IEEE
+    edition: 2020
+    page-total: 84
+    serial-number:
+        doi: 10.1109/IEEESTD.2020.9091348
+        serial: 60559
+    language: en-US
+    url:
+        value: https://ieeexplore.ieee.org/servlet/opac?punumber=9091346
